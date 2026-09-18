@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[left=1.2cm, right=1.2cm, top=0.8cm, bottom=0.8cm]{geometry}
 \usepackage{titlesec}
 \usepackage{fontawesome5}
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref}
@@ -8,7 +8,7 @@
 
 % Formatting sections
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{12pt}{8pt}
+\titlespacing{\section}{0pt}{4pt}{2pt}
 
 % Document Info
 \title{CV - Phan Huu Kha}
@@ -22,69 +22,63 @@
 % Header
 \begin{center}
     {\huge \textbf{PHAN HUU KHA}} \\
+    \vspace{3pt}
+    {\large Aspiring Backend / Systems Engineer} \\
     \vspace{4pt}
-    {\large Aspiring Backend Developer} \\
-    \vspace{6pt}
     \faEnvelope\ \href{mailto:phankhant0098@gmail.com}{phankhant0098@gmail.com} $\vert$ 
     \faGithub\ \href{https://github.com/phwkha}{github.com/phwkha} $\vert$ 
     \faGlobe\ \href{https://phwkha.github.io/portfolio/}{phwkha.github.io/portfolio}
 \end{center}
 
-
 % Summary
 \section{Profile}
-Software Engineering Student at Sai Gon University with a strong passion for Backend Development and Information Security. Constantly exploring and building side projects to solidify my knowledge in Java/Spring Boot, Python, and cloud-native technologies. Looking for an internship/fresher position to contribute and grow in a professional engineering environment.
+Software Engineering Student at Sai Gon University with a dedicated focus on Backend Development and DevOps. Proactively expanding knowledge in Java/Spring Boot and databases, while self-hosting a personal homelab server to gain hands-on practice with Docker and CI/CD. Eager to secure a Backend / DevOps Internship to learn production workflows from senior engineers and actively contribute to the team.
 
 % Education
- \section{Education}
-    \vspace{10pt}
-    \textbf{Sai Gon University} \hfill \textit{Sept. 2023 -- June 2028} \\
-    \textit{Engineer's Degree in Software Engineering} \hfill \textit{Current GPA: 3.4/4.0}
+\section{Education}
+\vspace{3pt}
+\textbf{Sai Gon University} \hfill \textit{Sept. 2023 -- June 2028} \\
+\textit{Engineer's Degree in Software Engineering} \hfill \textit{Current GPA: 3.4/4.0}
 
 % Skills
 \section{Technical Skills}
-\vspace{10pt}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \item \textbf{Backend:} Java, Spring Boot, Python, Django, REST API, WebSocket/STOMP, JUnit/Mockito
-    \item \textbf{Frontend:} React, JavaScript, HTML/CSS, Streamlit
-    \item \textbf{Databases \& Brokers:} PostgreSQL, MongoDB, Redis, FAISS, Apache Kafka
-    \item \textbf{DevOps \& AI:} Docker, Github Actions, Jenkins, ELK Stack, Ollama, LangChain
-    \item \textbf{Tools \& OS:} Linux (Ubuntu), Postman, LaTeX, Git, Swagger UI, Antigravity CLI
+\vspace{3pt}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1.5pt, topsep=1pt]
+    \item \textbf{Languages:} Java (17/21 LTS), SQL, JavaScript, Bash Shell
+    \item \textbf{Backend Technologies:} Spring Boot 3, Spring Security 6, Spring Data JPA/Hibernate, WebSocket (STOMP), RESTful APIs
+    \item \textbf{Databases, Caching \& Queues:} PostgreSQL , MongoDB , Redis, Apache Kafka (KRaft, Avro)
+    \item \textbf{DevOps \& Observability:} Docker, Jenkins Pipeline, Tailscale (Funnel), GitHub Actions, Nginx, Prometheus, Grafana, ELK
+    \item \textbf{Testing \& Architecture:} JUnit 5, Mockito, Event-Driven Architecture, Distributed Systems, Write-Behind Caching
 \end{itemize}
 
 % Projects
 \section{Projects}
-\vspace{10pt}
-\textbf{ChatWeb} -- \textit{Real-time Chat Platform (Learning/Demo Project)}  \\
-\vspace{5pt}
-\textit{Role: Individual Developer} $\vert$ \textit{Stack: Java, Spring Boot, React, WebSocket, PostgreSQL, MongoDB, Redis, Kafka, Docker}
-\begin{itemize}[leftmargin=0.2in]
-    \item Built a real-time chat application to practice using WebSocket and STOMP in Spring Boot.
-    \item Integrated PostgreSQL for user data and MongoDB for chat logs to learn hybrid database usage.
-    \item Used Redis to manage online user sessions and speed up data retrieval.
-    \item Set up Apache Kafka as a message broker to explore event-driven architecture.
-    \item Practiced Docker containerization, Github Actions CI/CD, and system monitoring with Prometheus/Grafana.
-    \item Wrote Unit Tests (JUnit / Mockito) to ensure the backend functions correctly.
+\vspace{4pt}
+\textbf{ChatWeb} -- \textit{Real-Time Distributed Messaging Platform} \hfill \href{https://github.com/phwkha/ChatWeb-RealTime.git}{\faGithub\ Code} \\
+\vspace{1pt}
+\textit{Role: Backend Developer (Team Project -- Backend Owner)} $\vert$ \textit{Java 21, Spring Boot 3.5, Kafka, Redis, PostgreSQL, MongoDB, WebSocket, Nginx, Docker}
+\begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
+    \item Solely developed the entire backend system, defining RESTful APIs and STOMP WebSocket contracts for frontend integration.
+    \item Researched and implemented distributed WebSocket messaging across multi-instance nodes using Redis Pub/Sub, avoiding sticky sessions.
+    \item Built an asynchronous event-driven pipeline via Apache Kafka (KRaft) with compact Apache Avro schemas and automated DLT retries.
+    \item Applied an asynchronous write-behind persistence pattern via Kafka batch consumers and MongoDB BulkOperations to cut disk I/O.
+    \item Implemented secure authentication with Spring Security 6 and stateless JWT (access/refresh tokens via HttpOnly cookies) and RBAC.
+    \item Configured Nginx reverse proxy (SSL/TLS, rate limiting, upstream TLS) and automated CI/CD via GitHub Actions.
 \end{itemize}
-\vspace{5pt}
-\begin{flushleft}\faGithub\ \href{https://github.com/phwkha/ChatWeb-RealTime.git}{github.com/phwkha/ChatWeb-RealTime}\end{flushleft}
-
-\vspace{10pt} % Insert a blank line
-\textbf{SmartDoc AI} -- \textit{RAG-based Document Chatbot (Learning/Demo Project)}  \\
-\vspace{5pt}
-\textit{Role: Team Leader} $\vert$ \textit{Stack: Python, Django, Streamlit, Ollama, FAISS, Cross-Encoder, LangChain}
-\begin{itemize}[leftmargin=0.2in]
-    \item Developed a document chatbot to learn about Retrieval-Augmented Generation (RAG) and local LLMs.
-    \item Implemented a hybrid search combining FAISS (semantic search) and BM25 (keyword matching) to improve results.
-    \item Ran LLMs locally using Ollama to experiment with AI safely without relying on paid APIs.
-    \item Processed and extracted text from various file types including PDFs, DOCX, and images (EasyOCR).
+\vspace{4pt}
+\textbf{Confession-Wall} -- \textit{Homelab Server Infrastructure \& Automated Jenkins CI/CD} \hfill \href{https://kha-dev.impala-tritone.ts.net/}{\faGlobe\ Live} $\vert$ \href{https://github.com/phwkha/Confession-Wall.git}{\faGithub\ Code} \\
+\vspace{1pt}
+\textit{Role: Homelab Infrastructure \& DevOps (Personal Lab)} $\vert$ \textit{Bare-Metal Linux, Tailscale \& Funnel, Jenkins CI/CD, Docker Compose, Nginx}
+\begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
+    \item Provisioned and self-hosted a dedicated Jenkins CI/CD service (:8443) and containerized workloads on a bare-metal Linux server.
+    \item Configured zero-trust remote access via \textbf{Tailscale} and \textbf{Tailscale Funnel}, safely routing public HTTPS web endpoints without exposing home router ports or dealing with CGNAT.
+    \item Constructed an end-to-end 5-stage Declarative Jenkins Pipeline triggered via GitHub webhooks, automating in-memory H2 Maven testing, multi-stage Docker builds, and Docker Hub image tagging.
+    \item Automated remote host deployment via SSH, executing zero-downtime rolling container updates with an automated 10-iteration curl health-check polling loop and automated failure rollback logging.
 \end{itemize}
-\vspace{5pt}
-\begin{flushleft}\faGithub\ \href{https://github.com/phwkha/Smart-Doc-AI.git}{github.com/phwkha/Smart-Doc-AI}\end{flushleft}
 
 % Languages
 \section{Languages}
-\vspace{10pt}
+\vspace{3pt}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \item \textbf{Vietnamese:} Native
     \item \textbf{English:} Reading documentations and basic communication

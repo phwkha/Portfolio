@@ -1,9 +1,9 @@
-PWD /home/phanhuukha/Dev/Portfolio/cv
+PWD /home/phanhuukha/Dev/personal project/Portfolio/cv
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/phanhuukha/Dev/Portfolio/cv/main.tex
+INPUT /home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex
 OUTPUT main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

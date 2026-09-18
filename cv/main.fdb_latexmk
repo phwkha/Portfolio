@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1789056111.98148 "/home/phanhuukha/Dev/Portfolio/cv/main.tex" "main.pdf" "main" 1789056112.38337 0
+["pdflatex"] 1789757512.0836 "/home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex" "main.pdf" "main" 1789757512.49366 0
   "/etc/texmf/web2c/texmf.cnf" 1777798661.4062 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/phanhuukha/Dev/Portfolio/cv/main.tex" 1789056111.81585 4252 eda2e66154f3b39619e79f5cf8bdc174 ""
+  "/home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex" 1789757511.91689 5027 35c96e7f96a26f78ea4d62c934e189a6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -77,9 +77,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1777798679.3735 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1777798762 8213234 e515f7127328140049b2430159091269 ""
-  "main.aux" 1789056112.34023 696 14722ab8896da03be88b8c605f6f1104 "pdflatex"
-  "main.out" 1789056112.34148 463 269830d1baf59105dc875e568302ae0a "pdflatex"
-  "main.tex" 1789056111.81585 4252 eda2e66154f3b39619e79f5cf8bdc174 ""
+  "main.aux" 1789757512.45012 696 14722ab8896da03be88b8c605f6f1104 "pdflatex"
+  "main.out" 1789757512.45112 463 269830d1baf59105dc875e568302ae0a "pdflatex"
+  "main.tex" 1789757511.91689 5027 35c96e7f96a26f78ea4d62c934e189a6 ""
   (generated)
   "main.aux"
   "main.log"
