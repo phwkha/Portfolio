@@ -2,7 +2,7 @@
 
 A personal portfolio website showcasing my skills, projects, and contact information. Built with React and designed with a modern, minimalist dark theme.
 
-🌐 **Live Demo:** [phwkha.github.io/portfolio](https://phwkha.github.io/portfolio/)
+🌐 **Live Demo:** [phwkha.github.io/Portfolio](https://phwkha.github.io/Portfolio/)
 
 ## 🚀 Features
 
