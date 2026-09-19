@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[left=1.2cm, right=1.2cm, top=0.8cm, bottom=0.8cm]{geometry}
+\usepackage[left=1.2cm, right=1.2cm, top=0.65cm, bottom=0.65cm]{geometry}
 \usepackage{titlesec}
 \usepackage{fontawesome5}
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref}
@@ -8,7 +8,7 @@
 
 % Formatting sections
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{4pt}{2pt}
+\titlespacing{\section}{0pt}{2.5pt}{1.5pt}
 
 % Document Info
 \title{CV - Phan Huu Kha}
@@ -22,66 +22,70 @@
 % Header
 \begin{center}
     {\huge \textbf{PHAN HUU KHA}} \\
-    \vspace{3pt}
+    \vspace{2pt}
     {\large Aspiring Backend / Systems Engineer} \\
-    \vspace{4pt}
-    \faEnvelope\ \href{mailto:phankhant0098@gmail.com}{phankhant0098@gmail.com} $\vert$ 
+    \vspace{2pt}
+    \faPhone\ (+84) 38 522 7984 $\vert$
+    \faEnvelope\ \href{mailto:phanhuukha.work@gmail.com}{phanhuukha.work@gmail.com} $\vert$ 
     \faGithub\ \href{https://github.com/phwkha}{github.com/phwkha} $\vert$ 
     \faGlobe\ \href{https://phwkha.github.io/Portfolio/}{phwkha.github.io/Portfolio}
 \end{center}
 
-% Summary
+% Profile
 \section{Profile}
-Software Engineering Student at Sai Gon University with a dedicated focus on Backend Development and DevOps. Proactively expanding knowledge in Java/Spring Boot and databases, while self-hosting a personal homelab server to gain hands-on practice with Docker and CI/CD. Eager to secure a Backend / DevOps Internship to learn production workflows from senior engineers and actively contribute to the team.
+Software Engineering Student at Sai Gon University with a dedicated focus on Backend Architecture, Distributed Systems, and DevOps. Experienced in designing high-throughput event-driven messaging pipelines, in-memory caching filters, and zero-trust self-hosted homelab infrastructure. Seeking a Backend / DevOps Internship or Fresher role to contribute to resilient, production-grade systems.
 
 % Education
 \section{Education}
-\vspace{3pt}
+\vspace{1pt}
 \textbf{Sai Gon University} \hfill \textit{Sept. 2023 -- June 2028} \\
-\textit{Engineer's Degree in Software Engineering} \hfill \textit{Current GPA: 3.4/4.0}
+\textit{Engineer's Degree in Software Engineering} \hfill \textit{Current GPA: 3.4 / 4.0}
 
 % Skills
 \section{Technical Skills}
-\vspace{3pt}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1.5pt, topsep=1pt]
-    \item \textbf{Languages:} Java (17/21 LTS), SQL, JavaScript, Bash Shell
-    \item \textbf{Backend Technologies:} Spring Boot 3, Spring Security 6, Spring Data JPA/Hibernate, WebSocket (STOMP), RESTful APIs
-    \item \textbf{Databases, Caching \& Queues:} PostgreSQL , MongoDB , Redis, Apache Kafka (KRaft, Avro)
-    \item \textbf{DevOps \& Observability:} Docker, Jenkins Pipeline, Tailscale (Funnel), GitHub Actions, Nginx, Prometheus, Grafana, ELK
-    \item \textbf{Testing \& Architecture:} JUnit 5, Mockito, Event-Driven Architecture, Distributed Systems, Write-Behind Caching
+\vspace{1pt}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0.8pt, topsep=1pt]
+    \item \textbf{Languages:} Java (17/21 LTS), SQL, JavaScript (ES6+), Bash Shell
+    \item \textbf{Backend Frameworks:} Spring Boot 3.5, Spring Security 6 (JWT / OAuth2 / RBAC), Spring Data JPA/Hibernate, WebSocket (STOMP), SSE, RESTful APIs
+    \item \textbf{Databases \& Queues:} PostgreSQL, MongoDB , Redis Stack (RedisBloom / Pub/Sub), Apache Kafka (KRaft / Avro)
+    \item \textbf{DevOps \& Infrastructure:} Docker \& Docker Compose, Google Jib, Jenkins CI/CD, GitHub Actions, Tailscale (Funnel), Nginx, Antigravity CLI
+    \item \textbf{Testing \& Architecture:} JUnit 5, Mockito, MockMvc, Swagger / OpenAPI 3.0, Event-Driven Architecture (EDA), Distributed Clustering
 \end{itemize}
 
 % Projects
 \section{Projects}
-\vspace{4pt}
+\vspace{2pt}
 \textbf{ChatWeb} -- \textit{Real-Time Distributed Messaging Platform} \hfill \href{https://github.com/phwkha/ChatWeb-RealTime.git}{\faGithub\ Code} \\
 \vspace{1pt}
-\textit{Role: Backend Developer (Team Project -- Backend Owner)} $\vert$ \textit{Java 21, Spring Boot 3.5, Kafka, Redis, PostgreSQL, MongoDB, WebSocket, Nginx, Docker}
+\textit{Role: Backend Developer \& System Designer} $\vert$ \textit{Java 21, Spring Boot 3.5, Kafka, RedisBloom, PostgreSQL, MongoDB, STOMP, Nginx, Docker Compose}
 \begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
-    \item Solely developed the entire backend system, defining RESTful APIs and STOMP WebSocket contracts for frontend integration.
-    \item Researched and implemented distributed WebSocket messaging across multi-instance nodes using Redis Pub/Sub, avoiding sticky sessions.
-    \item Built an asynchronous event-driven pipeline via Apache Kafka (KRaft) with compact Apache Avro schemas and automated DLT retries.
-    \item Applied an asynchronous write-behind persistence pattern via Kafka batch consumers and MongoDB BulkOperations to cut disk I/O.
-    \item Implemented secure authentication with Spring Security 6 and stateless JWT (access/refresh tokens via HttpOnly cookies) and RBAC.
-    \item Configured Nginx reverse proxy (SSL/TLS, rate limiting, upstream TLS) and automated CI/CD via GitHub Actions.
+    \item Engineered an event-driven Write-Behind pipeline using \textbf{Kafka (KRaft, Avro)} with dual consumers: a push consumer ($<$10ms latency) and a batch consumer grouping up to 200 messages into MongoDB with Dead Letter Topic (DLT) error isolation.
+    \item Scaled WebSocket clustering across multi-instance nodes using a \textbf{Redis Hash} session directory and node-targeted Redis Pub/Sub channels, completely eliminating broadcast storms.
+    \item Architected robust auth via \textbf{Spring Security 6} (JWT, HttpOnly refresh cookies, OAuth2, RBAC), STOMP handshake validation with Redis token blacklisting, and atomic PostgreSQL \texttt{token\_version} for instant multi-device session revocation.
+    \item Prevented DB exhaustion via \textbf{RedisBloom Cuckoo Filter} (O(1) account preflight), atomic Redis Lua rate limiters, 5s presence debounce queue, and MongoDB \texttt{\$max} atomic read receipts.
+    \item Orchestrated 10+ containers via \textbf{Docker Compose} with healthcheck chains, upstream TLS via private Root CA, automated CI/CD via \textbf{GitHub Actions} \& \textbf{Google Jib}, and API validation via \textbf{Swagger / OpenAPI 3.0}.
 \end{itemize}
-\vspace{4pt}
-\textbf{Confession-Wall} -- \textit{Homelab Server Infrastructure \& Automated Jenkins CI/CD} \hfill \href{https://kha-dev.impala-tritone.ts.net/}{\faGlobe\ Live} $\vert$ \href{https://github.com/phwkha/Confession-Wall.git}{\faGithub\ Code} \\
+\vspace{2pt}
+\textbf{Confession-Wall} -- \textit{Homelab Server Infrastructure \& Community Platform} \hfill \href{https://kha-dev.impala-tritone.ts.net/}{\faGlobe\ Live} $\vert$ \href{https://github.com/phwkha/Confession-Wall.git}{\faGithub\ Code} \\
 \vspace{1pt}
-\textit{Role: Homelab Infrastructure \& DevOps (Personal Lab)} $\vert$ \textit{Bare-Metal Linux, Tailscale \& Funnel, Jenkins CI/CD, Docker Compose, Nginx}
+\textit{Role: Fullstack Engineer \& DevOps Owner (Personal Lab)} $\vert$ \textit{Bare-Metal Linux, Spring Boot, PostgreSQL, Jenkins, Tailscale, Docker}
 \begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
-    \item Provisioned and self-hosted a dedicated Jenkins CI/CD service (:8443) and containerized workloads on a bare-metal Linux server.
-    \item Configured zero-trust remote access via \textbf{Tailscale} and \textbf{Tailscale Funnel}, safely routing public HTTPS web endpoints without exposing home router ports or dealing with CGNAT.
-    \item Constructed an end-to-end 5-stage Declarative Jenkins Pipeline triggered via GitHub webhooks, automating in-memory H2 Maven testing, multi-stage Docker builds, and Docker Hub image tagging.
-    \item Automated remote host deployment via SSH, executing zero-downtime rolling container updates with an automated 10-iteration curl health-check polling loop and automated failure rollback logging.
+    \item Self-hosted and provisioned a physical \textbf{Ubuntu bare-metal server} running containerized production workloads (Spring Boot, PostgreSQL, Nginx, Jenkins) under explicit CPU/RAM resource quotas.
+    \item Established Zero-Trust public ingress via \textbf{Tailscale Funnel}, tunneling public HTTPS traffic over encrypted WireGuard directly to Nginx without port forwarding or exposing residential IP.
+    \item Constructed an end-to-end 5-stage declarative \textbf{Jenkins CI/CD Pipeline} inside Docker (/var/run/docker.sock): automated H2 Maven testing, multi-stage builds, and rolling updates with curl healthchecks.
+    \item Built real-time confession streaming via \textbf{Server-Sent Events (SSE)} synchronized with Spring \texttt{afterCommit} transaction hooks, guaranteeing zero ghost broadcasts on rollback.
+    \item Achieved sub-millisecond ($<$1ms) case-insensitive search across confession posts by indexing PostgreSQL with \textbf{GIN pg\_trgm} trigram extensions, with architecture scaffolding accelerated via \textbf{Antigravity CLI}.
 \end{itemize}
+
+% Other Projects Note
+\vspace{2pt}
+\noindent\textbf{Other Projects (Available on Portfolio):} \textit{Secure-Chat-Web} (E2EE AES-GCM/RSA, Sparse Merkle Tree, Ethereum) $\vert$ \textit{Smart-Doc AI} (Django 5 ASGI, FAISS + BM25 Hybrid RAG, Cross-Encoder Re-ranking).
 
 % Languages
 \section{Languages}
-\vspace{3pt}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \item \textbf{Vietnamese:} Native
-    \item \textbf{English:} Reading documentations and basic communication
+\vspace{1pt}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0.5pt, topsep=1pt]
+    \item \textbf{Vietnamese:} Native $\vert$ \textbf{English:} Professional working proficiency (technical documentation, specifications)
 \end{itemize}
 
 \end{document}
