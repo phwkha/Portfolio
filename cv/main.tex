@@ -23,7 +23,7 @@
 \begin{center}
     {\huge \textbf{PHAN HUU KHA}} \\
     \vspace{2pt}
-    {\large Aspiring Backend / Systems Engineer} \\
+    {\large Aspiring Backend Engineer} \\
     \vspace{2pt}
     \faPhone\ (+84) 38 522 7984 $\vert$
     \faEnvelope\ \href{mailto:phanhuukha.work@gmail.com}{phanhuukha.work@gmail.com} $\vert$ 
@@ -33,7 +33,7 @@
 
 % Profile
 \section{Profile}
-Software Engineering Student at Sai Gon University with a dedicated focus on Backend Architecture, Distributed Systems, and DevOps. Experienced in designing high-throughput event-driven messaging pipelines, in-memory caching filters, and zero-trust self-hosted homelab infrastructure. Seeking a Backend / DevOps Internship or Fresher role to contribute to resilient, production-grade systems.
+Software Engineering Student at Sai Gon University with a strong passion for Backend Development and Systems Internals. Gained hands-on experience through building personal projects with event-driven messaging (Kafka), in-memory caching (Redis), and concurrency control. Eager to learn, tackle real-world engineering challenges, and contribute as a Backend Engineering Intern.
 
 % Education
 \section{Education}
@@ -55,31 +55,27 @@ Software Engineering Student at Sai Gon University with a dedicated focus on Bac
 % Projects
 \section{Projects}
 \vspace{2pt}
-\textbf{ChatWeb} -- \textit{Real-Time Distributed Messaging Platform} \hfill \href{https://github.com/phwkha/ChatWeb-RealTime.git}{\faGithub\ Code} \\
+\textbf{ChatWeb} -- \textit{Distributed Messaging Platform} \hfill \href{https://github.com/phwkha/ChatWeb-RealTime}{\faGithub\ github.com/phwkha/ChatWeb-RealTime} \\
 \vspace{1pt}
-\textit{Role: Backend Developer \& System Designer} $\vert$ \textit{Java 21, Spring Boot 3.5, Kafka, RedisBloom, PostgreSQL, MongoDB, STOMP, Nginx, Docker Compose}
+\textit{Role: Backend Developer \& System Designer} $\vert$ \textit{Java 21, Spring Boot 3.5, Kafka, Redis, PostgreSQL, MongoDB, STOMP, Nginx, Docker Compose}
 \begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
-    \item Engineered an event-driven Write-Behind pipeline using \textbf{Kafka (KRaft, Avro)} with dual consumers: a push consumer ($<$10ms latency) and a batch consumer grouping up to 200 messages into MongoDB with Dead Letter Topic (DLT) error isolation.
-    \item Scaled WebSocket clustering across multi-instance nodes using a \textbf{Redis Hash} session directory and node-targeted Redis Pub/Sub channels, completely eliminating broadcast storms.
-    \item Architected robust auth via \textbf{Spring Security 6} (JWT, HttpOnly refresh cookies, OAuth2, RBAC), STOMP handshake validation with Redis token blacklisting, and atomic PostgreSQL \texttt{token\_version} for instant multi-device session revocation.
-    \item Prevented DB exhaustion via \textbf{RedisBloom Cuckoo Filter} (O(1) account preflight), atomic Redis Lua rate limiters, 5s presence debounce queue, and MongoDB \texttt{\$max} atomic read receipts.
-    \item Orchestrated 10+ containers via \textbf{Docker Compose} with healthcheck chains, upstream TLS via private Root CA, automated CI/CD via \textbf{GitHub Actions} \& \textbf{Google Jib}, and API validation via \textbf{Swagger / OpenAPI 3.0}.
+    \item Engineered a Write-Behind pipeline via \textbf{Kafka (KRaft, Avro)} with dual consumers (sub-10ms push \& 200-msg batch to MongoDB) to decouple real-time delivery from disk I/O bottlenecks and isolate write failures with DLT.
+    \item Routed clustered WebSocket traffic using a \textbf{Redis Hash} session directory and node-specific Pub/Sub channels to scale horizontally across server replicas without broadcast storms.
+    \item Protected DB resources using \textbf{RedisBloom Cuckoo Filters} for O(1) account preflight, atomic Redis Lua rate limiters, a 5s ZSet anti-flapping queue, and MongoDB \texttt{\$max} to prevent write amplification.
+    \item Secured edge ingress via \textbf{Nginx} with private Root CA upstream TLS, paired with \textbf{Spring Security 6} (JWT, OAuth2) and atomic PostgreSQL \texttt{token\_version} to enforce instant multi-device session revocation.
+    \item Orchestrated a 10+ container topology via \textbf{Docker Compose} with healthcheck chains and 10 named volumes to eliminate startup race conditions and guarantee isolated, persistent services.
+    \item Built automated CI/CD via \textbf{GitHub Actions} and \textbf{Google Jib} (daemonless layered builds to Docker Hub) with \textbf{Swagger / OpenAPI 3.0} to standardize delivery and streamline interactive API testing.
 \end{itemize}
 \vspace{2pt}
-\textbf{Confession-Wall} -- \textit{Homelab Server Infrastructure \& Community Platform} \hfill \href{https://kha-dev.impala-tritone.ts.net/}{\faGlobe\ Live} $\vert$ \href{https://github.com/phwkha/Confession-Wall.git}{\faGithub\ Code} \\
+\textbf{Confession-Wall} -- \textit{Homelab \& Community Platform} \hfill \href{https://github.com/phwkha/Confession-Wall}{\faGithub\ github.com/phwkha/Confession-Wall} \\
 \vspace{1pt}
-\textit{Role: Fullstack Engineer \& DevOps Owner (Personal Lab)} $\vert$ \textit{Bare-Metal Linux, Spring Boot, PostgreSQL, Jenkins, Tailscale, Docker}
+\textit{Role: Fullstack Engineer (Personal Lab)} $\vert$ \textit{Spring Boot, Linux, Tailscale} \hfill \href{https://kha-dev.impala-tritone.ts.net/}{\faGlobe\ kha-dev.impala-tritone.ts.net} \\
 \begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
-    \item Self-hosted and provisioned a physical \textbf{Ubuntu bare-metal server} running containerized production workloads (Spring Boot, PostgreSQL, Nginx, Jenkins) under explicit CPU/RAM resource quotas.
-    \item Established Zero-Trust public ingress via \textbf{Tailscale Funnel}, tunneling public HTTPS traffic over encrypted WireGuard directly to Nginx without port forwarding or exposing residential IP.
-    \item Constructed an end-to-end 5-stage declarative \textbf{Jenkins CI/CD Pipeline} inside Docker (/var/run/docker.sock): automated H2 Maven testing, multi-stage builds, and rolling updates with curl healthchecks.
-    \item Built real-time confession streaming via \textbf{Server-Sent Events (SSE)} synchronized with Spring \texttt{afterCommit} transaction hooks, guaranteeing zero ghost broadcasts on rollback.
-    \item Achieved sub-millisecond ($<$1ms) case-insensitive search across confession posts by indexing PostgreSQL with \textbf{GIN pg\_trgm} trigram extensions, with architecture scaffolding accelerated via \textbf{Antigravity CLI}.
+    \item Provisioned a physical \textbf{Ubuntu bare-metal server} hosting containerized workloads under explicit Docker resource quotas to achieve 100\% self-hosted operational control at zero cloud expense.
+    \item Engineered Zero-Trust public ingress via \textbf{Tailscale Funnel} by tunneling HTTPS over WireGuard to Nginx, bypassing residential CGNAT and eliminating 100\% of open-port attack vectors without port forwarding.
+    \item Automated a 5-stage containerized \textbf{Jenkins CI/CD pipeline} (/var/run/docker.sock) with H2 testing, multi-stage builds, and rolling updates with curl healthchecks to cut deploy time to $<$3 minutes with auto-rollback.
+    \item Synchronized real-time \textbf{Server-Sent Events (SSE)} streaming with Spring \texttt{afterCommit} transaction hooks and unbuffered Nginx to deliver sub-15ms pushes while eliminating ghost broadcasts on rollbacks.
 \end{itemize}
-
-% Other Projects Note
-\vspace{2pt}
-\noindent\textbf{Other Projects (Available on Portfolio):} \textit{Secure-Chat-Web} (E2EE AES-GCM/RSA, Sparse Merkle Tree, Ethereum) $\vert$ \textit{Smart-Doc AI} (Django 5 ASGI, FAISS + BM25 Hybrid RAG, Cross-Encoder Re-ranking).
 
 % Languages
 \section{Languages}
