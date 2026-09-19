@@ -155,7 +155,7 @@ const contentEn = {
       subtitle:
         "Event-Driven Real-Time Messaging Platform & Distributed WebSocket Architecture",
       summary:
-        "A hands-on personal project I engineered during my studies to explore distributed systems architecture and event-driven patterns with Spring Boot 3.5 and Java 21. Acting as Backend Developer and System Designer, I focused on solving core engineering bottlenecks: achieving sub-10ms real-time push delivery across a multi-node WebSocket cluster without broadcast storms, while shielding databases from I/O contention via Kafka dual-consumers, Redis Cuckoo preflight filters, and polyglot persistence (PostgreSQL, MongoDB, Redis).",
+        "A hands-on personal project I engineered during my studies to explore distributed systems architecture and event-driven patterns with Spring Boot 3.5 and Java 21. Acting as Backend Developer and System Designer, I focused on solving core engineering bottlenecks: achieving sub-10ms real-time push delivery across a multi-node WebSocket cluster without broadcast storms, orchestrating a 10+ multi-container topology via Docker Compose with strict healthcheck chaining, establishing defense-in-depth security (Spring Security 6, stateless JWT, multi-device instant revocation, internal upstream TLS), while shielding databases from I/O contention via Kafka dual-consumers, Redis Cuckoo preflight filters, and polyglot persistence (PostgreSQL, MongoDB, Redis).",
       image: "/chatweb_thumbnail.png",
       stack: [
         "Java 21",
@@ -172,13 +172,15 @@ const contentEn = {
         "Redis Stack / RedisBloom",
         "Nginx",
         "Cloudinary",
-        "Docker / Google Jib",
+        "Docker & Docker Compose",
+        "Google Jib (Daemonless Build)",
         "GitHub Actions (CI/CD)",
         "Prometheus & Grafana",
       ],
       highlights: [
         "Decoupled Real-Time Push from Persistence (Kafka Dual-Consumer): Realizing that synchronous database writes bottleneck real-time messaging during traffic spikes, I implemented a Write-Behind pattern using Apache Kafka (KRaft mode, Avro schemas) with two independent consumer groups: a Push Consumer delivering STOMP frames in < 10ms, and a Batch Consumer grouping up to 200 messages for asynchronous bulk insertion into MongoDB with DLT error isolation.",
         "Targeted Distributed WebSocket Clustering (Redis Hash & Pub/Sub): To scale stateful WebSocket connections across multiple server replicas behind Nginx without catastrophic broadcast storms, I mapped active user-to-server sessions in a Redis Hash (ws:routing:servers) and dispatched messages strictly via node-specific Redis Pub/Sub channels to the server hosting the recipient.",
+        "Multi-Container Infrastructure Orchestration (Docker & Docker Compose): Architected a comprehensive production-like Docker Compose topology orchestrating 10+ interdependent containers: dual Kafka brokers in KRaft mode, Confluent Schema Registry, Redis Stack, MongoDB 7, PostgreSQL 16, Spring Boot backend, Nginx, and an ELK/Prometheus monitoring stack. Implemented strict healthcheck-based startup ordering (depends_on: condition: service_healthy) to eliminate container race conditions, isolated internal network bridges, and managed persistent state across 10 dedicated named volumes.",
         "In-Memory Cuckoo Filter Preflight & Sliding-Window Rate Limiting: To protect PostgreSQL from expensive disk lookups during brute-force or credential enumeration attacks, I loaded usernames/emails into RedisBloom Cuckoo Filters to verify existence in O(1) in-memory before querying the DB, coupled with atomic Redis Lua sliding-window rate limiters.",
         "Anti-Flapping Presence Debouncing & Watermark Read Receipts: To eliminate online/offline flickering caused by transient disconnects and page refreshes, I designed a 5-second debounce queue using a Redis Sorted Set; I also compressed read receipts using atomic MongoDB $max updates to prevent write amplification.",
         "Edge Ingress Hardening, Least-Connection Balancing & Upstream TLS: Configured Nginx as an Ingress reverse proxy using least_conn to balance REST, WebSocket (/ws), and OAuth2 traffic. Hardened with multi-zone IP rate limiting, edge TLS termination with HSTS, and internal upstream TLS verification to Spring Boot (port 8443) via a private Root CA.",
@@ -195,6 +197,8 @@ const contentEn = {
         "Dual Consumers: Fast Push (<10ms) & Batch Write-Behind (200 records)",
         "Clustered WebSocket Routing (Redis Hash ws:routing:servers & Pub/Sub)",
         "Polyglot Persistence: PostgreSQL (Auth) + MongoDB (Messages) + Redis Stack",
+        "Multi-Container Orchestration (Docker Compose & Healthcheck Chaining)",
+        "Security & Identity (Spring Security 6, JWT/OAuth2, Instant Session Revocation)",
         "API Documentation & Testing (Swagger / OpenAPI 3.0)",
         "Automated CI/CD Pipeline (GitHub Actions & Google Jib)",
       ],
@@ -538,7 +542,7 @@ const contentVi = {
       subtitle:
         "Nền tảng nhắn tin thời gian thực hướng sự kiện & Kiến trúc WebSocket phân tán",
       summary:
-        "Dự án cá nhân tôi tự tay thiết kế và xây dựng trong quá trình học tập nhằm nghiên cứu chuyên sâu về kiến trúc hướng sự kiện (Event-Driven Architecture) và hệ thống phân tán với Spring Boot 3.5 và Java 21. Đóng vai trò là Backend Developer kiêm Thiết kế hệ thống, tôi tập trung giải quyết bài toán kỹ thuật thực tế: làm sao để vừa đảm bảo độ trễ đẩy tin nhắn thời gian thực dưới 10ms trên cụm WebSocket đa node (tránh bão mạng broadcast storm), vừa bảo vệ cơ sở dữ liệu không bị nghẽn đĩa và quá tải truy vấn thông qua mô hình Kafka Dual-Consumer, Redis Cuckoo Filter và kiến trúc lưu trữ Polyglot (PostgreSQL, MongoDB, Redis).",
+        "Dự án cá nhân tôi tự tay thiết kế và xây dựng trong quá trình học tập nhằm nghiên cứu chuyên sâu về kiến trúc hướng sự kiện (Event-Driven Architecture) và hệ thống phân tán với Spring Boot 3.5 và Java 21. Đóng vai trò là Backend Developer kiêm Thiết kế hệ thống, tôi tập trung giải quyết các bài toán kỹ thuật cốt lõi: vừa đảm bảo độ trễ đẩy tin nhắn thời gian thực dưới 10ms trên cụm WebSocket đa node (tránh bão mạng broadcast storm), điều phối hạ tầng hơn 10 container với Docker Compose kèm chuỗi kiểm tra healthcheck nghiêm ngặt, thiết lập bảo mật phòng thủ đa lớp chuyên sâu (Spring Security 6, JWT stateless, thu hồi phiên đa thiết bị tức thì, Upstream TLS nội bộ), vừa bảo vệ cơ sở dữ liệu không bị nghẽn đĩa và quá tải truy vấn thông qua mô hình Kafka Dual-Consumer, Redis Cuckoo Filter và kiến trúc lưu trữ Polyglot (PostgreSQL, MongoDB, Redis).",
       image: "/chatweb_thumbnail.png",
       stack: [
         "Java 21",
@@ -555,13 +559,15 @@ const contentVi = {
         "Redis Stack / RedisBloom",
         "Nginx",
         "Cloudinary",
-        "Docker / Google Jib",
+        "Docker & Docker Compose",
+        "Google Jib (Build không cần daemon)",
         "GitHub Actions (CI/CD)",
         "Prometheus & Grafana",
       ],
       highlights: [
         "Phân tách luồng đẩy tin thời gian thực và ghi bền vững (Kafka Dual-Consumer): Nhận thấy nếu lưu database trước rồi mới gửi WebSocket thì ổ đĩa sẽ làm nghẽn toàn bộ luồng chat khi tải cao, tôi áp dụng mô hình Write-Behind với Apache Kafka (KRaft, Avro) chia làm 2 Consumer Group độc lập: Push Consumer đẩy STOMP tức thì trong < 10ms đến người dùng online, còn Batch Consumer gom mẻ tối đa 200 tin ghi bất đồng bộ vào MongoDB kèm Dead Letter Topic (DLT) để cô lập lỗi.",
         "Định tuyến cụm WebSocket đa node chống bão mạng (Redis Hash & Pub/Sub): Khi mở rộng WebSocket qua nhiều server đằng sau Nginx, nếu broadcast tin nhắn sang mọi node sẽ gây nghẽn mạng nghiêm trọng. Tôi thiết kế cơ chế lưu bảng ánh xạ phiên người dùng vào Redis Hash (ws:routing:servers), khi có tin nhắn hệ thống chỉ xuất bản vào kênh Redis Pub/Sub của đúng node server đang giữ kết nối của người nhận.",
+        "Điều phối hạ tầng đa container (Docker & Docker Compose): Tự tay thiết kế và vận hành hệ sinh thái hơn 10 container hoàn chỉnh thông qua Docker Compose: cụm 2 Kafka Broker chạy chế độ KRaft, Confluent Schema Registry, Redis Stack, MongoDB 7, PostgreSQL 16, Spring Boot backend, Nginx load balancer và cụm giám sát ELK/Prometheus. Thiết lập cơ chế phụ thuộc sức khỏe dịch vụ nghiêm ngặt (depends_on: condition: service_healthy) giúp loại bỏ triệt để lỗi xung đột khi khởi động hệ thống, cô lập dải mạng nội bộ an toàn và quản trị dữ liệu bền vững trên 10 named volumes chuyên dụng.",
         "Tiền kiểm tài khoản O(1) trên RAM & Giới hạn tần suất trượt (Redis Cuckoo Filter & Lua): Để bảo vệ PostgreSQL khỏi các cuộc tấn công quét brute-force hoặc spam đăng nhập làm cạn kiệt connection pool, tôi nạp danh sách username/email vào RedisBloom Cuckoo Filter để kiểm tra sự tồn tại trong O(1) ngay trên RAM trước khi chạm DB, kết hợp giới hạn tần suất cửa sổ trượt (sliding-window) bằng Redis Lua script nguyên tử.",
         "Khử rung trạng thái Online (Anti-Flapping) & Nén trạng thái đã đọc: Để khắc phục trải nghiệm người dùng bị nhấp nháy online/offline liên tục khi F5 tải lại trang, tôi tạo hàng đợi trễ trên Redis Sorted Set (ZSet) với thời hạn 5 giây để nuốt các đợt ngắt kết nối ngắn; đồng thời nén xác nhận đã đọc bằng toán tử nguyên tử MongoDB $max nhằm loại bỏ triệt để hiện tượng khuếch đại ghi (write amplification).",
         "Gia cố an ninh biên và mã hóa Upstream TLS nội bộ với Nginx: Cấu hình Nginx làm Ingress Gateway điều phối tải theo thuật toán least_conn, nâng cấp kết nối WebSocket /ws HTTP/1.1, áp dụng rate limit đa tầng tại biên, và thiết lập đường truyền nội bộ mã hóa Upstream TLS tới Spring Boot (cổng HTTPS 8443) được ký bởi chứng chỉ Root CA nội bộ do tôi tự quản lý.",
@@ -578,6 +584,8 @@ const contentVi = {
         "Dual Consumers: Push (<10ms) & Batch Write-Behind (200 records)",
         "Định tuyến cụm WebSocket (Redis Hash ws:routing:servers & Pub/Sub)",
         "Lưu trữ Polyglot: PostgreSQL (Auth) + MongoDB (Tin nhắn) + Redis Stack",
+        "Điều phối đa Container (Docker Compose & Chuỗi kiểm tra Healthcheck)",
+        "Bảo mật & Định danh (Spring Security 6, JWT/OAuth2, Thu hồi phiên tức thì)",
         "Tài liệu hóa & Thử nghiệm API (Swagger / OpenAPI 3.0)",
         "Pipeline CI/CD tự động (GitHub Actions & Google Jib)",
       ],
