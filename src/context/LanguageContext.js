@@ -5,10 +5,11 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [lang, setLangState] = useState(() => {
-    const saved = localStorage.getItem("portfolio_lang");
-    if (saved === "vi" || saved === "en") return saved;
-    if (typeof navigator !== "undefined" && navigator.language && navigator.language.startsWith("vi")) {
-      return "vi";
+    try {
+      const saved = localStorage.getItem("portfolio_user_lang");
+      if (saved === "vi" || saved === "en") return saved;
+    } catch (e) {
+      // ignore
     }
     return "en";
   });
@@ -16,7 +17,11 @@ export const LanguageProvider = ({ children }) => {
   const setLang = (newLang) => {
     if (newLang === "vi" || newLang === "en") {
       setLangState(newLang);
-      localStorage.setItem("portfolio_lang", newLang);
+      try {
+        localStorage.setItem("portfolio_user_lang", newLang);
+      } catch (e) {
+        // ignore
+      }
     }
   };
 
@@ -26,7 +31,6 @@ export const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     document.documentElement.setAttribute("lang", lang);
-    localStorage.setItem("portfolio_lang", lang);
   }, [lang]);
 
   const currentContent = lang === "vi" ? contentVi : contentEn;
@@ -41,6 +45,7 @@ export const LanguageProvider = ({ children }) => {
         t: currentContent.ui,
         introdata: currentContent.introdata,
         skills: currentContent.skills,
+        skillCategories: currentContent.skillCategories,
         projects: currentContent.projects,
         meta: currentContent.meta,
         categories: currentContent.ui.skills.categories,

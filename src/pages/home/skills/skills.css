@@ -78,7 +78,7 @@
 /* Tech categories */
 .tech_categories {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -89,6 +89,8 @@
     border-radius: 20px;
     box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .tech_category:hover {
@@ -99,10 +101,19 @@
 
 .tech_category h4 {
     font-family: 'Outfit', sans-serif;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 0 14px;
+    margin: 0 0 16px;
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category_icon {
+    color: var(--secondary-color);
+    font-size: 1.15rem;
+    flex-shrink: 0;
 }
 
 .tech_icons {
