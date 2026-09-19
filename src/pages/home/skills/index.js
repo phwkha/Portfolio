@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./skills.css";
-import { skills } from "../../../data/content_option";
+import { useLanguage } from "../../../context/LanguageContext";
 
 const Skills = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { skills, t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,11 +28,10 @@ const Skills = () => {
     <div className="skills_section" id="skills" ref={sectionRef}>
       <div className="skills_container">
         <div className="section_header animate-fadeInUp">
-          <span className="section_tag">Learning</span>
-          <h2 className="section_title">Skills & Technologies</h2>
+          <span className="section_tag">{t.skills.tag}</span>
+          <h2 className="section_title">{t.skills.title}</h2>
           <p className="section_subtitle">
-            Technologies I've been exploring and practicing through personal
-            projects. I'm still in the learning phase and have a long way to go.
+            {t.skills.subtitle}
           </p>
         </div>
 
@@ -62,10 +62,12 @@ const Skills = () => {
         {/* Tech categories */}
         <div className="tech_categories">
           <div className="tech_category">
-            <h4>Backend</h4>
+            <h4>{t.skills.categories.backend}</h4>
             <div className="tech_icons">
               <span>Java</span>
               <span>Spring Boot</span>
+              <span>Spring Security</span>
+              <span>JWT / RBAC</span>
               <span>Python</span>
               <span>Django</span>
               <span>REST API</span>
@@ -74,7 +76,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="tech_category">
-            <h4>Frontend</h4>
+            <h4>{t.skills.categories.frontend}</h4>
             <div className="tech_icons">
               <span>React</span>
               <span>Vite</span>
@@ -84,7 +86,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="tech_category">
-            <h4>Database & Infra</h4>
+            <h4>{t.skills.categories.database}</h4>
             <div className="tech_icons">
               <span>PostgreSQL</span>
               <span>MongoDB</span>
@@ -94,10 +96,12 @@ const Skills = () => {
             </div>
           </div>
           <div className="tech_category">
-            <h4>DevOps & AI</h4>
+            <h4>{t.skills.categories.devops}</h4>
             <div className="tech_icons">
               <span>Docker</span>
               <span>Jenkins</span>
+              <span>Nginx</span>
+              <span>Cloudinary</span>
               <span>Github Actions</span>
               <span>ELK Stack</span>
               <span>Ollama</span>
@@ -105,7 +109,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="tech_category">
-            <h4>Tools & Others</h4>
+            <h4>{t.skills.categories.tools}</h4>
             <div className="tech_icons">
               <span>Linux / Bash</span>
               <span>Maven</span>

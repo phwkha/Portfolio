@@ -92,6 +92,23 @@
     background: var(--secondary-glow);
 }
 
+.lang_toggle_border {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    margin-left: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.lang_toggle_border:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 12px var(--secondary-glow);
+}
+
 .theme_toggle_border {
     border: 1px solid var(--border-color);
     border-radius: 10px;

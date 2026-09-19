@@ -1,0 +1,38 @@
+.lang_toggle_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted-text);
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.lang_toggle_btn:hover {
+  color: var(--text-color);
+}
+
+.lang_toggle_btn .lang_label {
+  transition: color 0.2s ease, font-weight 0.2s ease, opacity 0.2s ease;
+  opacity: 0.5;
+}
+
+.lang_toggle_btn .lang_label.active {
+  color: var(--secondary-color);
+  font-weight: 800;
+  opacity: 1;
+}
+
+.lang_toggle_btn .lang_separator {
+  opacity: 0.3;
+  font-size: 0.72rem;
+}

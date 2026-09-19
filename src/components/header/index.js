@@ -1,9 +1,13 @@
 import React from "react";
 import "./style.css";
 import Themetoggle from "../themetoggle";
-import { logotext, socialprofils } from "../../data/content_option";
+import LanguageToggle from "../languagetoggle";
+import { logotext } from "../../data/content_option";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Headermain = () => {
+  const { t, introdata } = useLanguage();
+
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -19,22 +23,25 @@ const Headermain = () => {
             <div className="brand_logo">K</div>
             <div className="brand_text">
               <h1 className="brand_name">{logotext}</h1>
-              <p className="brand_subtitle">Student Developer</p>
+              <p className="brand_subtitle">{introdata.roleSubtitle}</p>
             </div>
           </div>
           <div className="header_nav">
             <button className="nav_link" onClick={() => scrollTo("about")}>
-              About
+              {t.nav.about}
             </button>
             <button className="nav_link" onClick={() => scrollTo("projects")}>
-              Projects
+              {t.nav.projects}
             </button>
             <button className="nav_link" onClick={() => scrollTo("skills")}>
-              Skills
+              {t.nav.skills}
             </button>
             <button className="nav_link" onClick={() => scrollTo("contact")}>
-              Contact
+              {t.nav.contact}
             </button>
+            <div className="lang_toggle_border" aria-label="Language toggle">
+              <LanguageToggle />
+            </div>
             <div className="theme_toggle_border" aria-label="Theme toggle">
               <Themetoggle />
             </div>

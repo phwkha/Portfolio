@@ -1,17 +1,19 @@
 import React from "react";
 import "./contact.css";
-import { introdata } from "../../../data/content_option";
+import { useLanguage } from "../../../context/LanguageContext";
 import { FaEnvelope, FaGithub, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
 
 const Contact = () => {
+  const { introdata, t } = useLanguage();
+
   return (
     <div className="contact_section" id="contact">
       <div className="contact_container">
         <div className="section_header animate-fadeInUp">
-          <span className="section_tag">Get in Touch</span>
-          <h2 className="section_title">Let's Connect</h2>
+          <span className="section_tag">{t.contact.tag}</span>
+          <h2 className="section_title">{t.contact.title}</h2>
           <p className="section_subtitle">
-            I'm always happy to chat about internship opportunities, share learning experiences, or just talk about tech. Feel free to reach out!
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -21,7 +23,7 @@ const Contact = () => {
               <FaEnvelope />
             </div>
             <div className="contact_card_info">
-              <h4>Email</h4>
+              <h4>{t.contact.emailLabel}</h4>
               <p>{introdata.email}</p>
             </div>
             <FaPaperPlane className="contact_card_arrow" />
@@ -32,7 +34,7 @@ const Contact = () => {
               <FaGithub />
             </div>
             <div className="contact_card_info">
-              <h4>GitHub</h4>
+              <h4>{t.contact.githubLabel}</h4>
               <p>phwkha</p>
             </div>
             <FaPaperPlane className="contact_card_arrow" />
@@ -43,7 +45,7 @@ const Contact = () => {
               <FaPhoneAlt />
             </div>
             <div className="contact_card_info">
-              <h4>Phone</h4>
+              <h4>{t.contact.phoneLabel}</h4>
               <p>{introdata.phone}</p>
             </div>
             <FaPaperPlane className="contact_card_arrow" />

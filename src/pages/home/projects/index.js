@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./projects.css";
-import { projects } from "../../../data/content_option";
+import { useLanguage } from "../../../context/LanguageContext";
 import { FaGithub, FaChevronDown, FaChevronUp, FaServer, FaLayerGroup } from "react-icons/fa";
 
 const Projects = () => {
   const [expanded, setExpanded] = useState(null);
+  const { projects, t } = useLanguage();
 
   const toggleExpand = (id) => {
     setExpanded(expanded === id ? null : id);
@@ -14,10 +15,10 @@ const Projects = () => {
     <div className="projects_section" id="projects">
       <div className="projects_container">
         <div className="section_header animate-fadeInUp">
-          <span className="section_tag">Projects</span>
-          <h2 className="section_title">Learning Projects</h2>
+          <span className="section_tag">{t.projects.tag}</span>
+          <h2 className="section_title">{t.projects.title}</h2>
           <p className="section_subtitle">
-            Personal projects I built during my studies — far from perfect, but each one is a step in my self-learning journey.
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -75,12 +76,12 @@ const Projects = () => {
                 >
                   {expanded === project.id ? (
                     <>
-                      <span>Hide Details</span>
+                      <span>{t.projects.hideDetails}</span>
                       <FaChevronUp />
                     </>
                   ) : (
                     <>
-                      <span>View Details</span>
+                      <span>{t.projects.viewDetails}</span>
                       <FaChevronDown />
                     </>
                   )}
@@ -92,7 +93,7 @@ const Projects = () => {
                     {/* Highlights */}
                     <div className="project_detail_block">
                       <h4>
-                        <FaLayerGroup /> What I Learned
+                        <FaLayerGroup /> {t.projects.whatILearned}
                       </h4>
                       <ul className="project_highlights">
                         {project.highlights.map((h, i) => (
@@ -107,7 +108,7 @@ const Projects = () => {
                     {/* Architecture */}
                     <div className="project_detail_block">
                       <h4>
-                        <FaServer /> System Architecture
+                        <FaServer /> {t.projects.systemArchitecture}
                       </h4>
                       <div className="project_arch_flow">
                         {project.architecture.map((item, i) => (
@@ -129,7 +130,7 @@ const Projects = () => {
                       className="project_source_btn"
                     >
                       <FaGithub />
-                      View Source Code
+                      {t.projects.viewSourceCode}
                     </a>
                   </div>
                 )}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { meta } from "../../data/content_option";
+import { useLanguage } from "../../context/LanguageContext";
 import Hero from "./hero";
 import Projects from "./projects";
 import Skills from "./skills";
@@ -9,6 +9,8 @@ import Contact from "./contact";
 import Footer from "../../components/footer";
 
 export const Home = () => {
+  const { meta } = useLanguage();
+
   return (
     <HelmetProvider>
       <section id="home" className="home">

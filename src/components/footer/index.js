@@ -1,8 +1,10 @@
 import React from "react";
 import "./footer.css";
-import { introdata } from "../../data/content_option";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Footer = () => {
+  const { introdata, t } = useLanguage();
+
   return (
     <footer className="footer_section">
       <div className="footer_container">
@@ -12,19 +14,19 @@ const Footer = () => {
             <span className="footer_name">Phan Huu Kha</span>
           </div>
           <p className="footer_text">
-            A student's portfolio, built while learning. Made with React ❤️
+            {t.footer.caption}
           </p>
           <div className="footer_links">
             <a href={introdata.github} target="_blank" rel="noopener noreferrer">
-              GitHub
+              {t.footer.github}
             </a>
             <span className="footer_dot">·</span>
-            <a href={`mailto:${introdata.email}`}>Email</a>
+            <a href={`mailto:${introdata.email}`}>{t.footer.email}</a>
             <span className="footer_dot">·</span>
-            <a href={introdata.my_cv} rel="noopener noreferrer">Resume</a>
+            <a href={introdata.my_cv} rel="noopener noreferrer">{t.footer.resume}</a>
           </div>
           <p className="footer_copyright">
-            © {new Date().getFullYear()} Phan Huu Kha. All rights reserved.
+            {t.footer.copyright}
           </p>
         </div>
       </div>
