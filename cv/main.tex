@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[left=1.2cm, right=1.2cm, top=0.65cm, bottom=0.65cm]{geometry}
+\usepackage[left=1.2cm, right=1.2cm, top=1.0cm, bottom=1.0cm]{geometry}
 \usepackage{titlesec}
 \usepackage{fontawesome5}
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref}
@@ -8,7 +8,7 @@
 
 % Formatting sections
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{2.5pt}{1.5pt}
+\titlespacing{\section}{0pt}{5pt}{3pt}
 
 % Document Info
 \title{CV - Phan Huu Kha}
@@ -22,11 +22,10 @@
 % Header
 \begin{center}
     {\huge \textbf{PHAN HUU KHA}} \\
-    \vspace{2pt}
+    \vspace{3pt}
     {\large Aspiring Backend Engineer} \\
-    \vspace{2pt}
-    \faPhone\ (+84) 38 522 7984 $\vert$
-    \faEnvelope\ \href{mailto:phanhuukha.work@gmail.com}{phanhuukha.work@gmail.com} $\vert$ 
+    \vspace{3pt}
+    \faEnvelope\ \href{mailto:phankhant0098@gmail.com}{phankhant0098@gmail.com} $\vert$ 
     \faGithub\ \href{https://github.com/phwkha}{github.com/phwkha} $\vert$ 
     \faGlobe\ \href{https://phwkha.github.io/Portfolio/}{phwkha.github.io/Portfolio}
 \end{center}
@@ -37,14 +36,14 @@ Software Engineering Student at Sai Gon University with a strong passion for Bac
 
 % Education
 \section{Education}
-\vspace{1pt}
+\vspace{2pt}
 \textbf{Sai Gon University} \hfill \textit{Sept. 2023 -- June 2028} \\
 \textit{Engineer's Degree in Software Engineering} \hfill \textit{Current GPA: 3.4 / 4.0}
 
 % Skills
 \section{Technical Skills}
-\vspace{1pt}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0.8pt, topsep=1pt]
+\vspace{2pt}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1.5pt, topsep=2pt]
     \item \textbf{Languages:} Java (17/21 LTS), SQL, JavaScript (ES6+), Bash Shell
     \item \textbf{Backend Frameworks:} Spring Boot 3.5, Spring Security 6 (JWT / OAuth2 / RBAC), Spring Data JPA/Hibernate, WebSocket (STOMP), SSE, RESTful APIs
     \item \textbf{Databases \& Queues:} PostgreSQL, MongoDB , Redis Stack (RedisBloom / Pub/Sub), Apache Kafka (KRaft / Avro)
@@ -54,11 +53,11 @@ Software Engineering Student at Sai Gon University with a strong passion for Bac
 
 % Projects
 \section{Projects}
-\vspace{2pt}
+\vspace{3pt}
 \textbf{ChatWeb} -- \textit{Distributed Messaging Platform} \hfill \href{https://github.com/phwkha/ChatWeb-RealTime}{\faGithub\ github.com/phwkha/ChatWeb-RealTime} \\
-\vspace{1pt}
+\vspace{2pt}
 \textit{Role: Backend Developer \& System Designer} $\vert$ \textit{Java 21, Spring Boot 3.5, Kafka, Redis, PostgreSQL, MongoDB, STOMP, Nginx, Docker Compose}
-\begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
+\begin{itemize}[leftmargin=0.2in, itemsep=1.5pt, topsep=2pt]
     \item Engineered a Write-Behind pipeline via \textbf{Kafka (KRaft, Avro)} with dual consumers (sub-10ms push \& 200-msg batch to MongoDB) to decouple real-time delivery from disk I/O bottlenecks and isolate write failures with DLT.
     \item Routed clustered WebSocket traffic using a \textbf{Redis Hash} session directory and node-specific Pub/Sub channels to scale horizontally across server replicas without broadcast storms.
     \item Protected DB resources using \textbf{RedisBloom Cuckoo Filters} for O(1) account preflight, atomic Redis Lua rate limiters, a 5s ZSet anti-flapping queue, and MongoDB \texttt{\$max} to prevent write amplification.
@@ -66,11 +65,11 @@ Software Engineering Student at Sai Gon University with a strong passion for Bac
     \item Orchestrated a 10+ container topology via \textbf{Docker Compose} with healthcheck chains and 10 named volumes to eliminate startup race conditions and guarantee isolated, persistent services.
     \item Built automated CI/CD via \textbf{GitHub Actions} and \textbf{Google Jib} (daemonless layered builds to Docker Hub) with \textbf{Swagger / OpenAPI 3.0} to standardize delivery and streamline interactive API testing.
 \end{itemize}
-\vspace{2pt}
+\vspace{5pt}
 \textbf{Confession-Wall} -- \textit{Homelab \& Community Platform} \hfill \href{https://github.com/phwkha/Confession-Wall}{\faGithub\ github.com/phwkha/Confession-Wall} \\
-\vspace{1pt}
+\vspace{2pt}
 \textit{Role: Fullstack Engineer (Personal Lab)} $\vert$ \textit{Spring Boot, Linux, Tailscale} \hfill \href{https://kha-dev.impala-tritone.ts.net/}{\faGlobe\ kha-dev.impala-tritone.ts.net} \\
-\begin{itemize}[leftmargin=0.2in, itemsep=0.5pt, topsep=1pt]
+\begin{itemize}[leftmargin=0.2in, itemsep=1.5pt, topsep=2pt]
     \item Provisioned a physical \textbf{Ubuntu bare-metal server} hosting containerized workloads under explicit Docker resource quotas to achieve 100\% self-hosted operational control at zero cloud expense.
     \item Engineered Zero-Trust public ingress via \textbf{Tailscale Funnel} by tunneling HTTPS over WireGuard to Nginx, bypassing residential CGNAT and eliminating 100\% of open-port attack vectors without port forwarding.
     \item Automated a 5-stage containerized \textbf{Jenkins CI/CD pipeline} (/var/run/docker.sock) with H2 testing, multi-stage builds, and rolling updates with curl healthchecks to cut deploy time to $<$3 minutes with auto-rollback.
@@ -79,8 +78,8 @@ Software Engineering Student at Sai Gon University with a strong passion for Bac
 
 % Languages
 \section{Languages}
-\vspace{1pt}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0.5pt, topsep=1pt]
+\vspace{2pt}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1.5pt, topsep=2pt]
     \item \textbf{Vietnamese:} Native $\vert$ \textbf{English:} Professional working proficiency (technical documentation, specifications)
 \end{itemize}
 

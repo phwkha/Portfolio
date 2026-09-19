@@ -1,10 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1789818454.89293 "/home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex" "main.pdf" "main" 1789818455.39063 0
+["pdflatex"] 1789818952.57919 "/home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex" "main.pdf" "main" 1789818952.99946 0
   "/etc/texmf/web2c/texmf.cnf" 1777798661.4062 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex" 1789818454.69442 5818 7e4cd67f5f63f5a6fcd5c68e892252cf ""
+  "/home/phanhuukha/Dev/personal project/Portfolio/cv/main.tex" 1789818952.41377 5768 1ac8656453f58dcba5b5a50eb3edecf3 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
-  "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tctt1000.tfm" 1136768653 1536 c5729d01ab121276cf99b309129349a0 ""
@@ -16,7 +15,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome5/fa5brands0.tfm" 1651520503 1380 a61d7c2860b3f6d342213a6b9b229e9e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome5/fa5free1solid.tfm" 1622837620 1316 1c2ee668ea88be9bd4f39690662cc344 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome5/fa5free2solid.tfm" 1622837620 1340 b21002f38a477f345fa9dc96a5613e2b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -55,7 +53,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty" 1651520503 8112 16dbb19fca3f2df864fea49874356f35 ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.fd" 1651520503 1206 b35c804e364d46e802702be118632c48 ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd" 1651520503 980 1b42613a5245ed252c04030af746d737 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree2.fd" 1651520503 980 38ce61da47d1ba16e56a2e312b56a515 ""
   "/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def" 1663965824 19448 1e988b341dda20961a6b931bcde55519 ""
@@ -86,9 +83,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1777798679.3735 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1777798762 8213234 e515f7127328140049b2430159091269 ""
-  "main.aux" 1789818455.33745 696 14722ab8896da03be88b8c605f6f1104 "pdflatex"
-  "main.out" 1789818455.33745 463 269830d1baf59105dc875e568302ae0a "pdflatex"
-  "main.tex" 1789818454.69442 5818 7e4cd67f5f63f5a6fcd5c68e892252cf ""
+  "main.aux" 1789818952.94968 696 14722ab8896da03be88b8c605f6f1104 "pdflatex"
+  "main.out" 1789818952.95068 463 269830d1baf59105dc875e568302ae0a "pdflatex"
+  "main.tex" 1789818952.41377 5768 1ac8656453f58dcba5b5a50eb3edecf3 ""
   (generated)
   "main.aux"
   "main.log"
