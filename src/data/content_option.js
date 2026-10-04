@@ -23,8 +23,8 @@ const contentEn = {
     my_img_url: avatarImg,
     my_cv: cvPdf,
     github: "https://github.com/phwkha",
-    email: "phanhuukha.work@gmail.com",
-    phone: "038 522 7984",
+    email: "phankhant0098@gmail.com",
+    phone: "039 602 8857",
   },
   skills: [
     { name: "Backend (Java / Spring Boot / Python)", level: 65 },
@@ -412,8 +412,8 @@ const contentVi = {
     my_img_url: avatarImg,
     my_cv: cvPdf,
     github: "https://github.com/phwkha",
-    email: "phanhuukha.work@gmail.com",
-    phone: "038 522 7984",
+    email: "phankhant0098@gmail.com",
+    phone: "039 602 8857",
   },
   skills: [
     { name: "Backend (Java / Spring Boot / Python)", level: 65 },
