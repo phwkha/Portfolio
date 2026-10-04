@@ -37,7 +37,10 @@ const contentEn = {
       name: "DevOps (Docker / Jenkins / GitHub Actions / Tailscale)",
       level: 55,
     },
-    { name: "Other Technologies (Linux / Git / Maven / Cloudinary)", level: 55 },
+    {
+      name: "Other Technologies (Linux / Git / Maven / Cloudinary)",
+      level: 55,
+    },
   ],
   skillCategories: [
     {
@@ -379,8 +382,7 @@ const contentEn = {
       phoneLabel: "Phone",
     },
     footer: {
-      caption:
-        "A student's portfolio, built while learning. Made with React ❤️",
+      caption: "A student's portfolio. Made with React ❤️",
       github: "GitHub",
       email: "Email",
       resume: "Resume",
@@ -769,7 +771,7 @@ const contentVi = {
     },
     footer: {
       caption:
-        "Portfolio cá nhân của một sinh viên đam mê công nghệ, xây dựng trong quá trình học tập. Made with React ❤️",
+        "Portfolio cá nhân của một sinh viên đam mê công nghệ. Made with React ❤️",
       github: "GitHub",
       email: "Email",
       resume: "Hồ sơ (CV)",
