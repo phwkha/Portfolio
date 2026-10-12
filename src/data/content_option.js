@@ -27,19 +27,19 @@ const contentEn = {
     phone: "039 602 8857",
   },
   skills: [
-    { name: "Backend (Java / Spring Boot / Python)", level: 65 },
-    { name: "Frontend (React / Vite / Three.js)", level: 55 },
-    { name: "Database (PostgreSQL / MongoDB / Kafka / Redis)", level: 60 },
-    { name: "Security (Spring Security / E2EE / TLS)", level: 60 },
-    { name: "Testing (JUnit 5 / Mockito / Swagger)", level: 55 },
-    { name: "Architecture (EDA / Distributed / RAG / Polyglot)", level: 60 },
+    { name: "Backend (Java / Spring Boot / Python)", level: 50 },
+    { name: "Frontend (React / Vite / Three.js)", level: 40 },
+    { name: "Database (PostgreSQL / MongoDB / Kafka / Redis)", level: 45 },
+    { name: "Security (Spring Security / E2EE / TLS)", level: 45 },
+    { name: "Testing (JUnit 5 / Mockito / Swagger)", level: 40 },
+    { name: "Architecture (EDA / Distributed / RAG / Polyglot)", level: 45 },
     {
       name: "DevOps (Docker / Jenkins / GitHub Actions / Tailscale)",
-      level: 55,
+      level: 40,
     },
     {
       name: "Other Technologies (Linux / Git / Maven / Cloudinary)",
-      level: 55,
+      level: 40,
     },
   ],
   skillCategories: [
@@ -416,17 +416,17 @@ const contentVi = {
     phone: "039 602 8857",
   },
   skills: [
-    { name: "Backend (Java / Spring Boot / Python)", level: 65 },
-    { name: "Frontend (React / Vite / Three.js)", level: 55 },
-    { name: "Cơ sở dữ liệu (PostgreSQL / MongoDB / Kafka / Redis)", level: 60 },
-    { name: "Bảo mật (Spring Security / E2EE / TLS)", level: 60 },
-    { name: "Kiểm thử (JUnit 5 / Mockito / Swagger)", level: 55 },
-    { name: "Kiến trúc hệ thống (EDA / Phân tán / RAG / Polyglot)", level: 60 },
+    { name: "Backend (Java / Spring Boot / Python)", level: 50 },
+    { name: "Frontend (React / Vite / Three.js)", level: 40 },
+    { name: "Cơ sở dữ liệu (PostgreSQL / MongoDB / Kafka / Redis)", level: 45 },
+    { name: "Bảo mật (Spring Security / E2EE / TLS)", level: 45 },
+    { name: "Kiểm thử (JUnit 5 / Mockito / Swagger)", level: 40 },
+    { name: "Kiến trúc hệ thống (EDA / Phân tán / RAG / Polyglot)", level: 45 },
     {
       name: "DevOps (Docker / Jenkins / GitHub Actions / Tailscale)",
-      level: 55,
+      level: 40,
     },
-    { name: "Công nghệ khác (Linux / Git / Maven / Cloudinary)", level: 55 },
+    { name: "Công nghệ khác (Linux / Git / Maven / Cloudinary)", level: 40 },
   ],
   skillCategories: [
     {
